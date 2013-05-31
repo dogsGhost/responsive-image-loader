@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>responsive image loader</title>
+<style>
+
+.wrapper {
+  margin: 0 auto;
+  width: 96%;
+}
+
+li {
+  width: 900px;
+}
+
+li:nth-child(2n+3) {
+  width: 700px;
+}
+
+li:nth-child(3n+3) {
+  width: 400px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+</style>
+</head>
+<body>
+<div class="wrapper">
+  <ol>
+    <li class="js-delay-image-load"><a href="img/image01.jpg" title="another great image 1"></a></li>
+    <li class="js-delay-image-load"><a href="img/image02.jpg" title="another great image 2"></a></li>
+    <li class="js-delay-image-load"><a href="img/image03.jpg" title="another great image 3"></a></li>
+    <li class="js-delay-image-load"><a href="img/image04.jpg" title="another great image 4"></a></li>
+    <li class="js-delay-image-load"><a href="img/image05.jpg" title="another great image 5"></a></li>
+    <li class="js-delay-image-load"><a href="img/image06.jpg" title="another great image 6"></a></li>
+  </ol>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/imgLoad.js"></script>
+</body>
+</html>
