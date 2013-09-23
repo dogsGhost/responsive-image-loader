@@ -2,6 +2,7 @@ var imgLoad = {
   init: function () {
     var data, parent, request;
 
+    // Find 
     $('.js-delay-image-load').find('a').each(function () {
       parent = this.parentElement;
 
@@ -13,7 +14,7 @@ var imgLoad = {
       };
 
       request = $.ajax({
-        url: 'php/imgcheck.php',
+        url: 'php/convertLinkToImg.php',
         type: 'POST',
         data: data,
         context: parent

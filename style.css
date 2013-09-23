@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1em;
+  color: #333;
+  font: 300 1em/1.5 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 860px;
+}
+
+h1, h2, p, li {
+  margin: 0 0 1rem;
+}
+
+li {
+  font-size: 1.3em;
+}
+
+li:nth-child(even) {
+  width: 75%;
+}
+
+li:nth-child(3n+3) {
+  width: 50%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+li img {
+  vertical-align: top;
+  border: 1px solid #333;
+}
+
+.nyi {
+  color: #777;
+  font-style: italic;
+}
+
+.code {
+  background: lightblue;
+}
