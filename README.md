@@ -1,4 +1,4 @@
-# responive image loader
+# responsive image loader
 
 *This project is still in development.*
 
