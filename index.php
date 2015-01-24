@@ -1,4 +1,7 @@
-<?php require 'php/content.php' ?>
+<?php
+  require 'php/content-request.php';
+  require 'php/alter-content.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +17,7 @@
     ?>
   </div>
 
- <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="js/imgLoad.js"></script>-->
+ <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+ <!--<script src="js/imgLoad.js"></script>-->
 </body>
 </html>

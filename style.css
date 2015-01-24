@@ -30,7 +30,7 @@ li {
 li:nth-child(3n+3) {
   width: 50%;
 }
-
+*/
 img {
   height: auto;
   max-width: 100%;
@@ -40,4 +40,3 @@ li img {
   vertical-align: top;
   border: 1px solid #333;
 }
-*/

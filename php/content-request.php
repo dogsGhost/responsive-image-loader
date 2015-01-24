@@ -1,11 +1,12 @@
 <?php
 
 // jank simulation of loading content from a database.
+// for demo purposes only.
 
 $content = '';
 $relations = [];
 
-function register_hook($hook, $func) {
+function register_hook( $hook, $func ) {
     global $relations;
 
     if ( !isset($relations[ $hook ]) ) {
@@ -32,20 +33,10 @@ function get_content() {
 function trigger( $action ) {
     global $relations;
 
-    // $arr = $relations[ $action ];
-
     if ( isset($relations[ $action ]) ) {
         foreach ($relations[ $action ] as $value) {
             $value();
         }
     }
 
-}
-
-register_hook( 'post_get_content', 'extra_content' );
-
-function extra_content() {
-    global $content;
-
-    $content .= '<p>extra content via post-hook</p>';
 }
