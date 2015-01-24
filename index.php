@@ -12,9 +12,8 @@
 </head>
 <body>
   <div class="wrapper" id="content">
-    <?php
-      echo get_content();
-    ?>
+    <h1>Responsive Images with Ajax</h1>
+    <?php echo get_content(); ?>
   </div>
 
  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
