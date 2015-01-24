@@ -23,7 +23,7 @@ li {
   font-size: 1.3em;
 }
 
-li:nth-child(even) {
+/*li:nth-child(even) {
   width: 75%;
 }
 
@@ -40,12 +40,4 @@ li img {
   vertical-align: top;
   border: 1px solid #333;
 }
-
-.nyi {
-  color: #777;
-  font-style: italic;
-}
-
-.code {
-  background: lightblue;
-}
+*/

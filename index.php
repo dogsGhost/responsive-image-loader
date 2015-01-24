@@ -1,3 +1,4 @@
+<?php require 'php/content.php' ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +10,11 @@
 <body>
   <div class="wrapper" id="content">
     <?php
-      require_once('php/content.php');
+      echo get_content();
     ?>
   </div>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="js/imgLoad.js"></script>
+ <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/imgLoad.js"></script>-->
 </body>
 </html>
