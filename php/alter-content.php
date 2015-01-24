@@ -1,31 +1,38 @@
 <?php
-
-// use a post-content hook to get access to the content before its served to the browser.
+// Use a hook to get access to the content before its served to the browser.
 register_hook( 'post_get_content', 'replace_images' );
-
 
 function replace_images() {
     global $content;
+    $images = [];
+    $anchors = [];
 
-    /*
-    * TODO:
-    * go through and find
-    * <img src="img/image01.jpg" title="responsive image 1" class="img img--first" alt="boat shoes">
-    * becomes
-    * <a href="img/image01.jpg" data-was-image="true" title="responsive image 1" data-class="img img--first">[image of boat shoes]</a>
-    * data attr added so we can find it on the client side.
-    *
-    * go through and put all the img tags in an array, loop through array and create second array of anchor tags
-    * build from the img tags.
-    * find/replace in content img1:anchor1
-    */
-}
+    // Match all the image tags.
+    preg_match_all('(<img .*?>)', $content, $matches, PREG_SET_ORDER);
 
-// test hook
-register_hook( 'post_get_content', 'extra_content' );
+    // Convert to shallow array.
+    foreach ( $matches as $value ) {
+        $images[] = $value[0];
+    }
 
-function extra_content() {
-    global $content;
+    // Create anchor from each image.
+    foreach ( $images as $value ) {
+        $string = $value;
 
-    $content .= '<p>extra content via post-hook</p>';
+        // Get alt text to use as anchor text.
+        $alt_text = explode('"', explode(' alt="', $string)[1])[0];
+        $text = '>[image of ' . $alt_text . ']</a>';
+
+        // TODO: Add check for self closing '/>' so that can be replaced instead of '>' if needed.
+        // Change image to anchor tag using arrays of strings for find/replace within the image tag string.
+        $search = ['<img', '>', 'src', 'class', 'alt'];
+        $replace = ['<a data-was-image="true"', $text, 'href', 'data-class', 'data-alt'];
+        $string = str_replace($search, $replace, $string);
+
+        // Add new anchor string to array.
+        $anchors[] = $string;
+    }
+
+    // Replace the images in the content with the links.
+    $content = str_replace($images, $anchors, $content);
 }
