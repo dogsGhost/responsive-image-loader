@@ -10,7 +10,7 @@ $bp2 = 768;
 $imgSizes = array(
     'small' => array(
         'width' => 500,
-        'height' => 375 
+        'height' => 375
     ),
     'medium' => array(
         'width' => 800,
@@ -39,7 +39,7 @@ function combineDims ($arr, $d) {
   $search = array('.jpg', '.jpeg', '.gif', '.png');
   $replace = $dims . '.' . $ext;
   $src = str_replace($search, $replace, $d['src']);
-  
+
   return $src;
 }
 
@@ -53,5 +53,5 @@ if ($data['width'] < $bp1) {
 
 } else {
     // Fallback to original image.
-    echo "<img src='" . $data['src'] . "' alt='" . $data['alt'] . "'>";  
+    echo "<img src='" . $data['src'] . "' alt='" . $data['alt'] . "'>";
 }
